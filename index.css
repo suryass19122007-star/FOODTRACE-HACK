@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+body { @apply bg-paper text-ink font-sans antialiased; }
+.fade-in { animation: fin .35s ease both; }
+@keyframes fin { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .fade-in { animation: none; } }
+button:focus-visible { outline: 2px solid #1f7a4d; outline-offset: 2px; }
+@keyframes scanline { 0% { top: 6%; } 50% { top: 90%; } 100% { top: 6%; } }
+.scanline { animation: scanline 2.4s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .scanline { animation: none; top: 50%; } }
+#qr-reader { border: 0 !important; }
+#qr-reader video { width: 100% !important; height: 100% !important; object-fit: cover; }
